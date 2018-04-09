@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ja" xml:lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="format-detection" content="telephone=no">
+	<title>아이돌마스터 신데렐라 걸즈</title>
+	<link rel="stylesheet" type="text/css" href="./12008305/css/rich/new_mypage_common.css" media="all">
+	<!--<link rel="apple-touch-icon-precomposed" href="http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http://125.6.169.35/idolmaster/image_sp/ui/icon_bookmark.png">-->
+	<script type="text/javascript">
+		if (window.localStorage) {
+			var displaySet = localStorage.getItem('DisplayPositionSet');
+			if (displaySet == 1) {
+				document.write('<meta name="viewport" content="width=320, user-scalable=no">');
+				if (navigator.userAgent.indexOf('Android') > 0) document.getElementsByTagName('html')[0].style.zoom = document.documentElement.clientWidth / 320;
+				window.addEventListener('resize', function() {
+					if (navigator.userAgent.indexOf('Android') > 0) document.getElementsByTagName('html')[0].style.zoom = document.documentElement.clientWidth / 320;
+				})
+			} else {
+				document.write('<meta name="viewport" content="width=device-width, user-scalable=no">');
+			}
+		} else {
+			document.write('<meta name="viewport" content="width=device-width, user-scalable=no">');
+		}
+	</script>
+	<script src="./12008305/js/angular-1.6.9.min.js"></script>
+	<script src="./12008305/js/jquery-2.2.2.min.js"></script>
+	<script src="./12008305/js/underscore-min.js"></script>
+	<script src="./12008305/js/require.js"></script>
+	<script>
+		requirejs.config({
+			paths: {
+				easeljs: "./12008305/js/easeljs-0.8.2.min.js",
+				tweenjs: "./12008305/js/tweenjs-0.6.2.min.js",
+			}
+		})
+	</script>
+	<script src="./12008305/js/common.js"></script>
+	<script src="./12008305/js/common_new.js"></script>
+	<script>
+		$(function() {
+			window.$ibox = $('.ibox').ibox();
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			if (typeof newrelic === 'object' && typeof newrelic.setPageViewName === 'function') {
+				newrelic.setPageViewName('/idolmaster/index.php/refresh_room');
+			}
+		});
+	</script>
+	<script type='text/javascript' src='./12008305/js/app_sound.js'></script>
+	<link rel="stylesheet" type="text/css" href="./css/base.css" />
+</head>
+
+<body id="refresh_room" class="index" ng-app="refApp" ng-controller="refCtrl">
+	<div id="top" class="page_container jsOnBtn">
+		<nav class="area_menu_header">
+			<div class="area_menu_header_6btn">
+				<h1 id="JtextLimit">Refresh Room</h1>
+			</div>
+		</nav>
+		<input id="delay" type="hidden" value="0">
+		<link rel="stylesheet" type="text/css" href="./12008305/css/rich/refresh_room.css" media="all">
+		<header class="m-Btm12">
+			<img src="./12008305/image_sp/ui/refresh_room/top/top_refreshroom-{{img}}.png" style="width:320px;height:120px" class='m-Head_img'>
+		</header>
+	</div>
+
+	<section>
+		<div class="selectArea type_02">
+			<div class="yellow m-Btm8" style="line-height:100%">
+				검색한 아이돌이 등장한 이야기를 표시합니다.
+			</div>
+			<form class="form_detail_search" method="post">
+				<div class="layout_area t-Lft">
+					<div class="layout_l">
+						<div class="blue">아이돌 이름</div>
+						<div class="area-btn-common _base-width">
+							<input ng-model="q" name="name" class="search_text_1_5 name_line" placeholder="아이돌 이름을 한자·히라가나·가타카나·한글로 검색할 수 있습니다">
+							<label class='btn_decision_sub_line_3' onclick="">
+							<input type='submit' class="btn-value" value="검색">
+							</label>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" name="is_search" value="1">
+				<style type="text/css">
+					input::-webkit-input-placeholder {
+						font-size: 10px;
+						text-indent: -1px;
+					}
+				</style>
+			</form>
+		</div>
+	</section>
+
+	<ul>
+		<li ng-repeat="item in data | filter:q | startFrom:(currentPage-1)*pageSize | limitTo:pageSize">
+			<section id="refresh_link_list">
+				<a class="refresh_link jsOnDesignBtn" href='./detail/{{item.id}}/'>
+						<img src='./12008305/image_sp/ui/refresh_room/banner/{{item.id}}.png' class="refresh_link_img">
+						<div class="refresh_link_value"><span ng-repeat="line in item.name">{{line}}<br></div>
+					</a>
+			</section>
+		</li>
+	</ul>
+
+	<script>
+		var refApp = angular.module('refApp', []);
+		refApp.controller('refCtrl', ['$scope', '$filter', function($scope, $filter) {
+			$scope.img = Math.floor(Math.random() * 32) + 1;
+			$scope.currentPage = 1;
+			$scope.pageSize = 10;
+			$scope.data = [{
+				id: 1,
+				name: ["뉴 제네레이션즈의", "오프 타임"],
+				idol: "しまむらうづき_しぶやりん_ほんだみお_シマムラウヅキ_シブヤリン_ホンダミオ_島村卯月_渋谷凛_本田未央_시마무라우즈키_시부야린_혼다미오"
+			}, {
+				id: 2,
+				name: ["프릴드 스퀘어 대작전!"],
+				idol: "ももいあずき_くどうしのぶ_あやせほのか_きたみゆず_モモイアズキ_クドウシノブ_アヤセホノカ_キタミユズ_桃井あずき_工藤忍_綾瀬穂乃香_喜多見柚_모모이아즈키_쿠도시노부_아야세호노카_키타미유즈"
+			}, {
+				id: 3,
+				name: ["걸즈 파워의", "걸즈 토크"],
+				idol: "つきみやみやび_きしべあやか_えとうみさき_ツキミヤミヤビ_キシベアヤカ_エトウミサキ_月宮雅_岸部彩華_衛藤美紗希_츠키미야미야비_키시베아야카_에토미사키"
+			}, {
+				id: 4,
+				name: ["브리앙뜨 느와르의", "권유"],
+				idol: "くろかわちあき_みずのみどり_クロカワチアキ_ミズノミドリ_黒川千秋_水野翠_쿠로카와치아키_미즈노미도리"
+			}, {
+				id: 5,
+				name: ["다같이 공부하자♪"],
+				idol: "よこやまちか_ささきちえ_いちはらにな_めありー・こくらん_ヨコヤマチカ_ササキチエ_イチハラニナ_メアリー・コクラン_横山千佳_佐々木千枝_市原仁奈_メアリー・コクラン_요코야마치카_사사키치에_이치하라니나_메어리코크란"
+			},	{
+				id: 6,
+				name: ["섹시 갸루즈의", "갸루 토크★"],
+				idol: "おおつきゆい_じょうがさきみか_ふじもとりな_オオツキユキ_ジョウガサキミカ_フジモトリナ_大槻唯_城ケ崎美嘉_藤本里奈_오오츠키유이_죠가사키미카_후지모토리나"
+			}, {
+				id: 7,
+				name: ["和の心・", "羽衣小町昔話"],
+				idol: "しおみしゅうこ_こばやかわさえ_シオミシュウコ_コバヤカワサエ_塩見周子_小早川紗枝_시오미슈코_코바야카와사에"
+			}, {
+				id: 16,
+				name: ["멜로 옐로의", "○○수업?"],
+				idol: "みずもとゆかり_しいなのりこ_なかのゆか_ミズモトユカリ_シイナノリコ_ナカノユカ_水本ゆかり_椎名法子_中野有香_미즈모토유카리_시이나노리코_나카노유카"
+			}, {
+				id: 25,
+				name: ["수험에 얽힌", "에세트라♪"],
+				idol: "にったみなみ_さぎさわふみか_とときあいり_ニッタミナミ_サギサワフミカ_トトキアイリ_新田美波_鷺沢文香_十時愛梨_닛타미나미_사기사와후미카_토토키아이리"
+			}, {
+				id: 26,
+				name: ["虹色ドリーマー、", "好きを語る。の巻☆"],
+				idol: "あべなな_あらきひな_かみやなお_アベナナ_アラキヒナ_カミヤナオ_安部菜々_荒木比奈_神谷奈緒_아베나나_아라키히나_카미야나오"
+			}, {
+				id: 28,
+				name: ["想い想われ、", "贈り合い…♪"],
+				idol: "はっとりとうこ_わくいるみ_みふねみゆ_ハットリトウコ_ワクイルミ_ミフネミユ_服部瞳子_和久井留美_三船美優_핫토리토코_와쿠이루미_미후네미유"
+			}];
+			$scope.q = '';
+
+			$scope.getData = function() {
+				// needed for the pagination calc
+				// https://docs.angularjs.org/api/ng/filter/filter
+				return $filter('filter')($scope.data, $scope.q)
+			}
+
+			$scope.numberOfPages = function() {
+				return Math.ceil($scope.getData().length / $scope.pageSize);
+			}
+		}]);
+		//We already have a limitTo filter built-in to angular,
+		//let's make a startFrom filter
+		refApp.filter('startFrom', function() {
+			return function(input, start) {
+				start = +start; //parse to int
+				return input.slice(start);
+			}
+		});
+	</script>
+
+	<img src="./12008305/image_sp/ui/line_hoshi.jpg" width="320" height="11" class="m-Btm8"><br>
+	<form class="pager_area" style="margin:0">
+		<div class="pager_submit_area">
+			<input type="number" name="target_page_num" ng-model="currentPage" id="jsPageNumber" pattern="\d*" value="">페이지로<label class="btn_normal_line_4 m-Cnt m-Btm8" id="jsMovePagerLabel" for="jsMovePagerBtn" style="display:inline-block;vertical-align:middle;margin-left:5px;margin-bottom:3px;">
+				<input id="jsMovePagerBtn" type="submit" value="이동" style="width:inherit;height:inherit;line-height:inherit;margin:0;">
+			</label>
+		</div>
+		<div class="pager_panel_area">
+			<div ng-if="currentPage<=1" class="btn_pager_first _disabled"></div>
+			<div ng-if="currentPage<=1" class="btn_pager_back _disabled"></div>
+			<div ng-if="currentPage>=numberOfPages()" class="btn_pager_next _disabled"></div>
+			<div ng-if="currentPage>=numberOfPages()" class="btn_pager_last _disabled"></div>
+			<input type="submit" name="first" ng-if="currentPage>1" ng-click="currentPage=1" class="btn_pager_first jsNotDisabled jsOnDesignBtn" value="1">
+			<input type="submit" name="back" ng-if="currentPage>1" ng-click="currentPage=currentPage-1" class="btn_pager_back jsNotDisabled jsOnDesignBtn" value="1">
+			<input type="submit" name="next" ng-if="currentPage<numberOfPages()" ng-click="currentPage=currentPage+1" class="btn_pager_next jsNotDisabled jsOnDesignBtn" value="1">
+			<input type="submit" name="last" ng-if="currentPage<numberOfPages()" ng-click="currentPage=numberOfPages()" class="btn_pager_last jsNotDisabled jsOnDesignBtn" value="1">
+			{{currentPage}}/{{numberOfPages()}}
+			<input type="hidden" name="is_paging" value="1">
+		<script>
+			$('#jsPageNumber').focus(function() {
+				$('#jsMovePagerLabel').removeClass("_disabled");
+			});
+		</script>
+	</form>
+
+	<footer>
+		<img src="./12008305/image_sp/ui/line_hoshi.jpg" width="320" height="11" class="m-Btm8">
+		<div class="line_idolmaster"></div>
+		<div class="t-Cnt">(dc) iDOLM@STER Gallery</div>
+	</footer>
+	</div>
+</body>
+
+</html>

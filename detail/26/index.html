@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="ja" xml:lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobage: footer-color" content="none">
+	<link rel="stylesheet" href='../../12008305/css/game/pex.css' media="all">
+	<script src='../../12008305/js/jquery-2.2.2.min.js'></script>
+	<script src='../../12008305/js/ilibrary.js'></script>
+	<script src='../../12008305/js/pex-petit-1.2.0.js'></script>
+	<script src='../../12008305/js/pex_common.js'></script>
+	<script src='../../12008305/js/min/petit_manager.min.js'></script>
+	<script src='../../12008305/js/min/refresh_room.min.js'></script>
+	<title>ｱｲﾄﾞﾙﾏｽﾀｰ ｼﾝﾃﾞﾚﾗｶﾞｰﾙｽﾞ </title>
+	<link rel="stylesheet" type="text/css" href="../../12008305/css/rich/refresh_room.css" media="all">
+	<script type='text/javascript'>
+		var se_flg = 0,
+			bgm_flg = 0,
+			chrome_app_flg = 0,
+			chrome_app_extension_id = 'dnacabmnfmejgfffmcehejcmiciinpej';
+	</script>
+	<script type='text/javascript' src='../../12008305/js/app_sound.js'></script>
+	<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+</head>
+
+<body>
+	<article>
+		<section id="pageContainer" class="m-Btm0">
+			<div id="bg_space" class="large-size"></div>
+			<div id="jsEyeCatch">
+				<div style="margin-top:120px"><img src='../../12008305/image_sp/petit_cg/ui/sprite/loading/working_1.gif' width="195" height="139"></div>
+				<div style="margin-top:-80px"><img src='../../12008305/image_sp/petit_cg/ui/sprite/loading/loading.gif' width="102" height="102"></div>
+			</div>
+			<div class="effect-container large-size">
+				<div id="animation-container"></div>
+				<div id="dialogue" class="animation"></div>
+				<div class="story" style="text-align:left;">
+					<div class="comment-container">
+						<span></span><br>
+						<span></span><br>
+						<span></span><br>
+					</div>
+					<a href="#" class="story_btn" style="display:none;"></a>
+				</div>
+			</div>
+			<div id="name-plate" rel="3" class="large-size">
+				<div class="plate-area" rel="1">
+					<img class="plate" src='../../12008305/image_sp/ui/refresh_room/name_plate/54.png'>
+				</div>
+				<div class="plate-area" rel="2">
+					<img class="plate" src='../../12008305/image_sp/ui/refresh_room/name_plate/76.png'>
+				</div>
+				<div class="plate-area" rel="3">
+					<img class="plate" src='../../12008305/image_sp/ui/refresh_room/name_plate/74.png'>
+				</div>
+			</div>
+			<a id="next" class="next large-size" href="#"></a>
+		</section>
+	</article>
+	<script type="text/javascript">
+		(function() {
+			var refreshRoom = window.refreshRoom || {};
+			var ua = navigator.userAgent;
+			var in_chome = false;
+			try {
+				in_chrome = (chrome in window);
+			} catch (e) {
+				in_chrome = false;
+			}
+			refreshRoom.is_pc = in_chrome || (window.chrome ? true : false) && (window.chrome.webstore) || ua.indexOf('ChromeApp') > -1 || ua.indexOf('AAWebview') > -1;
+			refreshRoom.old_os = ua.match(/(OS [3-7]|Android [2-4])/);
+			refreshRoom.is_multiply = false;
+			refreshRoom.returnUrl = '../../';
+			refreshRoom.dialogueSwf = '../../petit_refresh_room_balloon_swf';
+			refreshRoom.data = {
+				"id": "26",
+				"refresh_room_id": "26",
+				"start_time": "2018/03/02 15:00:00",
+				"refresh_room_name": "虹色ドリーマー、<BR>好きを語る。の巻☆",
+				"idol_set_id_1": "80",
+				"idol_accessory_set_id_1": "7",
+				"idol_set_id_2": "81",
+				"idol_accessory_set_id_2": "7",
+				"idol_set_id_3": "82",
+				"idol_accessory_set_id_3": "7",
+				"idol_set_id_4": "",
+				"idol_accessory_set_id_4": "",
+				"idol_set_id_5": "",
+				"idol_accessory_set_id_5": "",
+				"idol_name_1": "安部菜々",
+				"idol_kana_1": "あべなな",
+				"name_plate_id_1": "54",
+				"idol_name_2": "荒木比奈",
+				"idol_kana_2": "あらきひな",
+				"name_plate_id_2": "76",
+				"idol_name_3": "神谷奈緒",
+				"idol_kana_3": "かみやなお",
+				"name_plate_id_3": "74",
+				"idol_name_4": "",
+				"idol_kana_4": "",
+				"idol_name_5": "",
+				"idol_kana_5": "",
+				"idol_avatar": {
+					"1": {
+						"attribute": "1",
+						"body_type": "1",
+						"breast_size": "2",
+						"short_name": "菜々",
+						"image_url_list": {
+							"expression_1022": "../../12008305/js/petit_cg/expression/1022.js",
+							"hair_10022": "../../12008305/js/petit_cg/hair/10022.js",
+							"costume_1_20022": "../../12008305/js/petit_cg/costume/1/20022.js"
+						},
+						"sub_type_list": {
+							"head": null,
+							"hand": null,
+							"leg": null
+						},
+						"take_sub_type": {
+							"head": 0,
+							"hand": 0,
+							"leg": 0
+						},
+						/*
+						"petit_csv_info_list": {
+							"costume_1_20022": {
+								"image_path": "http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A//125.6.169.35/idolmaster/image_sp/item/l/petit_cg/20022",
+								"accessory_name": "メイド服・菜々",
+								"explanation": "フリルエプロンがかわいい菜々のメイド服です。<br>ご奉仕しちゃいますよぉっ!キャハッ☆",
+								"type_id": "2"
+							}
+						},
+						"petit_csv_sub_type_info_list": []
+						*/
+					},
+					"2": {
+						"attribute": "2",
+						"body_type": "1",
+						"breast_size": "2",
+						"short_name": "比奈",
+						"image_url_list": {
+							"expression_1065": "../../12008305/js/petit_cg/expression/1065.js",
+							"hair_10065": "../../12008305/js/petit_cg/hair/10065.js",
+							"costume_1_20065": "../../12008305/js/petit_cg/costume/1/20065.js",
+							"head_1_30065": "../../12008305/js/petit_cg/head/1/30065.js"
+						},
+						"sub_type_list": {
+							"head": {
+								"head_1_30065": "../../12008305/js/petit_cg/head/1/30065.js"
+							},
+							"hand": null,
+							"leg": null
+						},
+						"take_sub_type": {
+							"head": 0,
+							"hand": 0,
+							"leg": 0
+						},
+						/*
+						"petit_csv_info_list": {
+							"costume_1_20065": {
+								"image_path": "http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A//125.6.169.35/idolmaster/image_sp/item/l/petit_cg/20065",
+								"accessory_name": "ジャージ・比奈",
+								"explanation": "ジャージにスウェットな比奈の私服です。<br>ラクなのが一番っス…",
+								"type_id": "2"
+							},
+							"head_1_30065": {
+								"image_path": "http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A//125.6.169.35/idolmaster/image_sp/item/l/petit_cg/30065",
+								"accessory_name": "丸縁眼鏡・比奈",
+								"explanation": "比奈の丸縁眼鏡です。<br>これがないと見えないっス。",
+								"type_id": "3"
+							}
+						},
+						"petit_csv_sub_type_info_list": {
+							"head_1_30065": {
+								"image_path": "http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A//125.6.169.35/idolmaster/image_sp/item/l/petit_cg/30065",
+								"accessory_name": "丸縁眼鏡・比奈",
+								"explanation": "比奈の丸縁眼鏡です。<br>これがないと見えないっス。",
+								"type_id": "3"
+							}
+						}
+						*/
+					},
+					"3": {
+						"attribute": "2",
+						"body_type": "1",
+						"breast_size": "2",
+						"short_name": "奈緒",
+						"image_url_list": {
+							"expression_1053": "../../12008305/js/petit_cg/expression/1053.js",
+							"hair_10053": "../../12008305/js/petit_cg/hair/10053.js",
+							"costume_1_20053": "../../12008305/js/petit_cg/costume/1/20053.js"
+						},
+						"sub_type_list": {
+							"head": null,
+							"hand": null,
+							"leg": null
+						},
+						"take_sub_type": {
+							"head": 0,
+							"hand": 0,
+							"leg": 0
+						},
+						/*
+						"petit_csv_info_list": {
+							"costume_1_20053": {
+								"image_path": "http://sp.pf-img-a.mbga.jp/12008305/?guid=ON&amp;url=http%3A//125.6.169.35/idolmaster/image_sp/item/l/petit_cg/20053",
+								"accessory_name": "カジュアルコーデ・奈緒",
+								"explanation": "飾らない雰囲気が魅力の奈緒の私服です。<br>胸に秘めた熱い想いが見え隠れ。",
+								"type_id": "2"
+							}
+						},
+						"petit_csv_sub_type_info_list": []
+						*/
+					}
+				}
+			};
+			var default_swf = '../../petit_refresh_room_character_swf';
+			for (var i in refreshRoom.data.idol_avatar) {
+				refreshRoom.data.idol_avatar[i].swf = default_swf;
+			}
+			refreshRoom.detail = [{
+				"id": "1",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "question_right",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "1",
+				"message": "두 분은\n좋아하는 작품이 뭡니까?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "2",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "smile_left",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "좋아하는 작품인가~ 마음에 드는\n애니가 잔뜩 있으니까\n어디서부터 얘기해볼까나...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "3",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그렇죠... 요건\n오타쿠라면 누구나 고민되는검다.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "4",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "nod",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "하나만 골라보라는건\n꽤 어려운 질문이지",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "5",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그러면 질문을 조금 바꿔볼까요!\n나오쨩 기억속에 최고로 남아있는\n애니는 무엇인가요?",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "6",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "nod_smile",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그러면~...역시\n애니를 좋아하게 된 계기가 되었던\n그거겠지!",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "7",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "joy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아마 히나쨩의 집에서 함께 봤던\n그 작품이겠네요♪\n애니 합숙때의 그거!",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "8",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그건 틀림없이 명작이었슴다.\n나오쨩이 애니 오타쿠 세계에\n빠져들게 된 것도 납득함다.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "9",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "smile_left",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "웃음도 있고 눈물도 있고 감동도 있고...\n언제 봐도『좋아! 힘내자!』\n하는 마음이 드는걸.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "10",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod_smile",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "주인공과 친구들이 만들어가는\n거친 인연의 이야기... 나나도\n가슴이 찡~해졌어요☆",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "11",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "joy",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "특히 그 라스트신!\n지금 생각해봐도 가슴이 뜨거워진다구♪",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "12",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "smile_right",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후훗. 나오쨩, 불타고있슴다.\n우정 이야기를 보면서, 누군가를\n떠올리기라도 한겁니까~?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "13",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "angry",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "동료라던가, 친구라던가...\n그,그냥 평범한거잖아, 평범!\n이상한거 생각안했거든!?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "14",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod_smile",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아하핫♪\n새빨게진 나오쨩, 귀여워요.\n그 애니 주인공처럼!",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "15",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "smile_left",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "역시 처음으로 푹빠진 애니는\n특별한검다. 이해됨다.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "16",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그렇네요. 아, 혹시...!\n히냐쨩이 가장 좋아하는 것도, 만화를 좋아하게\n된 계기를 만들어준 작품인가요?",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "17",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그것 또한 틀림없이 커다란 존재임다.\n하지만 제 마음속에 가장 깊게 새겨진 것은\n존경하기 그지없는 분의 만화임다.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "18",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "joy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "와아~!\n어떤 만화일지\n나나, 엄청 신경쓰여요☆",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "19",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod_smile",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "조금 마이너합니다만...\n세계관도 독특하고 작화가 쩔어줘서\n단숨에 빨려들어가는 느낌임다!",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "20",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "question_left",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그림이 뛰어나고 몰입감이 좋다...인가?\n그게 엄청나게 빠져들게 만드는거구나.\n그래서 무슨 이야기야?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "21",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "smile_right",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "단편집입니다만,\n일상에서 일어나는 불가사의를 \n멋지게 구성해 그려난 이야기가 많았슴다.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "22",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "happy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "와아...예술적인 작품이네요♪\n머릿속에서 영감이 밍밍밍!\n자극이 되네요. 꺄핫☆",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "23",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "joy",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "오오, 재밌어보여!\n히나씨가 그린 만화랑은 분위기가\n다르니까 조금 의외긴 하지만.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "24",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "joy",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그렇슴다, 방향성은 다름다.\n그래도 읽을 때 저도 이런 식으로\n빠져들게 만들고싶다...고 생각함다!",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "25",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "역시! 작품의 장르는 다르더라도\n히나쨩의 만화를 발전하게 만드는\n그런 소중한 작품이었네요☆",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "26",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod_smile",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "바로 그검다!\n다음에 사무소에 가져와보겠슴다.\n두 분도 읽어보셨음 함다♪",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "27",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "꼭! 기대하고 있을게요♪\n나나, 최근엔 옛날 애니만 잔뜩\n돌려보고 있어서...",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "28",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "question_left",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "옛날 애니?\n어떤거야?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "29",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "happy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "나오쨩도 알고 계신가요?\n여자아이가 변신해서 악과 맞서 싸우는, 왕도적인\n미소녀 애니에요!",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "30",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "joy",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아아, 그검까!\n초등학생부터 어른까지 온갖 세대의\n여자들에게 대인기였던, 전설의 애니!",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "31",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "네! 나나도 초등학생 때 보고\n이렇게 귀엽고 강한 여자아이가\n되고싶다고 엄청 동경했었어요♪",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "32",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "smile_left",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아~ 그건가~ 그거라면 나도\n잘 봤었어. 마법 아이템을\n사용해서 변신하는 신이 좋았지!",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "33",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod_smile",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "맞아요♪\n나나도 멜로디를 따라부르면서\n몇번이나 변신놀이를 했었어요!",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "34",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "joy",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "라~♪\n짜라라라~라~♪",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "35",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "happy",
+				"motion2": "happy",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "짜라라 쨔라라~♪\n쨔라라~ 라라라~ 라~♪\n반짝☆",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "36",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "확실히 모든 여자의 희망을 담은,\n애니 역사에 이름을 남긴 띵작임다!",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "37",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "nod_smile",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "지금도 인기가 이어지고 있는 괴물급\n애니지. 아마 이번 봄부터 다시\n새 시리즈가 시작한다는거 같던데?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "38",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "shock",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아앗!? 나나, 처음 들었어요!\n그러니까 10년만에 새 시리즈라는\n거네요! 빅 뉴스에요!",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "39",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "deny",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "…뭐? 10년만?\n내가 알기로는\n2년만이었던것 같은데...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "40",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "tire",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "………………앗。\n아,아아...!　나나, 무심코 그만☆\n그랬었죠, 2년만이었죠!",
+				"message_window_type": "jaggy",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "41",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "smile_left",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그치! 그렇다쳐도 나나씨,\n2년을 10년이라고 느끼다니\n진짜 엄청나게 좋아하는 애니였구나!",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "42",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "question_left",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "어라? 그러면 전 다른 애니라고\n생각했던 모양이네요. 유치원생이었을 때 \n유행했던 녀석의 이야긴가 해서, 그냥...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "43",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "panic",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "（…뜨끔!）",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "44",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "smile_left",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "제가 아는 녀석은 지금 얘기한 작품의\n선배격 포지션이라는 느낌임다.\n미소녀계열이고 마법으로 변신하기도 하고",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "45",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "nod_smile",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아아, 그건가~ 실은 아직 본 적 없어서\n계속 신경쓰고 있었어.\n나나씨, DVD 가지고 있어?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "46",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "joy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "물론 가지고 있어요!!\n나나, 그쪽 미소녀 애니도\n엄청 좋아해서 전편소장하고있어요☆",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "47",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "혹시 괜찮다면…\n조금 멀지만 두 분다 지금부터\n우사밍별로 보러가지 않을래요?",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "48",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "joy",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "오, 좋네♪ 할 이야기는 잔뜩 있으니까 \n이동할 때에도 순식간일거야.\n히나씨도 함께가지않을래?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "",
+				"message_arrow_3": "1",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "49",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "smile_left",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "저도 귀가 얇은검다.\n그러면, 오늘은 나나씨 집에서\n애니 감상회를 하는걸로♪",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "50",
+				"refresh_room_id": "26",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "happy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "있는 힘껏 대접할게요☆\n나나의 청춘...이 아니라, 추천\n하는 거니까 기대해주세요!",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}];
+			petitManager.loaded_action = function() {
+				if (refreshRoom.is_multiply) $('.animation').css({
+					zoom: "50%"
+				});
+				var margin = window.innerHeight - parseInt($('#bg_space > img').css('height'));
+				if (margin > 0) $('#pageContainer').css({
+					"margin-top": margin * 0.5
+				});
+				var $effect_container = $('.effect-container');
+				var $dialogue = $('#dialogue');
+				var dialogue_top = parseInt($dialogue.css('top'));
+				var dialogue_ratio = refreshRoom.dialogue.scaleSizeCheck() / 320;
+				$dialogue.css('top', dialogue_top * dialogue_ratio);
+				if (!$effect_container.hasClass('large-size')) {
+					$dialogue.css('top', dialogue_top * dialogue_ratio);
+					var $animation = $('.animation:not(#dialogue)');
+					var anime_top = parseInt($animation.css('top'));
+					$animation.css('top', anime_top * dialogue_ratio);
+				}
+				$('#jsEyeCatch').hide();
+				refreshRoom.dialogue.startSwf();
+			};
+			petitManager.setWidth(refreshRoom.dialogue.scaleSizeCheck(refreshRoom.is_pc));
+			refreshRoom.bg_list = {
+				"1": "../../12008305/image_sp/ui/refresh_room/bg/bg1.jpg",
+				"": "../../12008305/image_sp/ui/refresh_room/bg/bg.jpg"
+			};
+			var image = new Image;
+			var multiply = refreshRoom.is_pc || window.devicePixelRatio >= 1.5 && !refreshRoom.old_os ? 0.5 : 1;
+			var size = refreshRoom.dialogue.scaleSizeCheck() * multiply;
+			var ratio = size / 320;
+			image.width = size;
+			var effect_container = $('.effect-container');
+			effect_container.css({
+				width: size,
+				height: size,
+				bottom: parseInt(effect_container.css('bottom')) * ratio
+			});
+			image.onload = function() {
+				$('#bg_space').append(image);
+				var height = $(this).css('height');
+				$(this).parent().css('height', height);
+				$(image).css('top', parseInt($(image).css('top')) * ratio);
+				$('#name-plate').css({
+					"-webkit-transform": "scale(" + ratio + ")"
+				})
+				petitManager.setCharacters(refreshRoom.data.idol_avatar);
+				refreshRoom.dialogue.setMotion();
+			}
+			image.src = refreshRoom.bg_list[refreshRoom.detail[0].bg_image];
+			//console.log(refreshRoom);
+		})();
+
+		function playText() {
+			if (window.refreshRoom == void 0) return;
+			refreshRoom.dialogue.comment_deferred.resolve();
+		}
+
+		function motion_callback(index, motion) {
+			var filtered_plate = $('.plate-area[rel=' + index + ']');
+			if (filtered_plate.css('display') == 'none') filtered_plate.show();
+			if (refreshRoom.dialogue.motion_wait) $('#next').trigger('click');
+			refreshRoom.dialogue.motion_wait = false;
+		}
+	</script>
+	<style>
+	</style>
+</body>
+
+</html>

@@ -1,0 +1,1228 @@
+<!doctype html>
+<html lang="ja" xml:lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobage: footer-color" content="none">
+	<link rel="stylesheet" href='../../12008305/css/game/pex.css' media="all">
+	<script src='../../12008305/js/jquery-2.2.2.min.js'></script>
+	<script src='../../12008305/js/ilibrary.js'></script>
+	<script src='../../12008305/js/pex-petit-1.2.0.js'></script>
+	<script src='../../12008305/js/pex_common.js'></script>
+	<script src='../../12008305/js/min/petit_manager.min.js'></script>
+	<script src='../../12008305/js/min/refresh_room.min.js'></script>
+	<title>ｱｲﾄﾞﾙﾏｽﾀｰ ｼﾝﾃﾞﾚﾗｶﾞｰﾙｽﾞ </title>
+	<link rel="stylesheet" type="text/css" href="../../12008305/css/rich/refresh_room.css" media="all">
+	<script type='text/javascript'>
+		var se_flg = 0,
+			bgm_flg = 0,
+			chrome_app_flg = 0,
+			chrome_app_extension_id = 'dnacabmnfmejgfffmcehejcmiciinpej';
+	</script>
+	<script type='text/javascript' src='../../12008305/js/app_sound.js'></script>
+	<link rel="stylesheet" type="text/css" href="../../css/base.css?20171116" />
+</head>
+
+<body>
+	<article>
+		<section id="pageContainer" class="m-Btm0">
+			<div id="bg_space" class="large-size"></div>
+			<div id="jsEyeCatch">
+				<div style="margin-top:120px"><img src='../../12008305/image_sp/petit_cg/ui/sprite/loading/working_1.gif' width="195" height="139"></div>
+				<div style="margin-top:-80px"><img src='../../12008305/image_sp/petit_cg/ui/sprite/loading/loading.gif' width="102" height="102"></div>
+			</div>
+			<div class="effect-container large-size">
+				<div id="animation-container"></div>
+				<div id="dialogue" class="animation"></div>
+				<div class="story" style="text-align:left;">
+					<div class="comment-container">
+						<span></span><br>
+						<span></span><br>
+						<span></span><br>
+					</div>
+					<a href="#" class="story_btn" style="display:none;"></a>
+				</div>
+			</div>
+			<div id="name-plate" rel="2" class="large-size">
+				<div class="plate-area" rel="1">
+					<img class="plate" src='../../12008305/image_sp/ui/refresh_room/name_plate/68.png'>
+				</div>
+				<div class="plate-area" rel="2">
+					<img class="plate" src='../../12008305/image_sp/ui/refresh_room/name_plate/86.png'>
+				</div>
+			</div>
+			<a id="next" class="next large-size" href="#"></a>
+		</section>
+	</article>
+	<script type="text/javascript">
+		(function() {
+			var refreshRoom = window.refreshRoom || {};
+			var ua = navigator.userAgent;
+			var in_chome = false;
+			try {
+				in_chrome = (chrome in window);
+			} catch (e) {
+				in_chrome = false;
+			}
+			refreshRoom.is_pc = in_chrome || (window.chrome ? true : false) && (window.chrome.webstore) || ua.indexOf('ChromeApp') > -1 || ua.indexOf('AAWebview') > -1;
+			refreshRoom.old_os = ua.match(/(OS [3-7]|Android [2-4])/);
+			refreshRoom.is_multiply = false;
+			refreshRoom.returnUrl = '../..';
+			refreshRoom.dialogueSwf = '../../petit_refresh_room_balloon_swf';
+			refreshRoom.data = {
+				"id": "4",
+				"refresh_room_id": "4",
+				"start_time": "2017\/11\/28 15:00:00",
+				"refresh_room_name": "\u30d6\u30ea\u30e4\u30f3\u30c8\u30ce\u30ef\u30fc\u30eb\u306e<br>\u304a\u8a98\u3044",
+				"idol_set_id_1": "1",
+				"idol_accessory_set_id_1": "1",
+				"idol_set_id_2": "2",
+				"idol_accessory_set_id_2": "2",
+				"idol_set_id_3": "",
+				"idol_accessory_set_id_3": "",
+				"idol_set_id_4": "",
+				"idol_accessory_set_id_4": "",
+				"idol_set_id_5": "",
+				"idol_accessory_set_id_5": "",
+				"idol_name_1": "\u9ed2\u5ddd\u5343\u79cb",
+				"idol_kana_1": "\u304f\u308d\u304b\u308f\u3061\u3042\u304d",
+				"name_plate_id_1": "68",
+				"idol_name_2": "\u6c34\u91ce\u7fe0",
+				"idol_kana_2": "\u307f\u305a\u306e\u307f\u3069\u308a",
+				"name_plate_id_2": "86",
+				"idol_name_3": "",
+				"idol_kana_3": "",
+				"idol_name_4": "",
+				"idol_kana_4": "",
+				"idol_name_5": "",
+				"idol_kana_5": "",
+				"idol_avatar": {
+					"1": {
+						"attribute": "2",
+						"body_type": "1",
+						"breast_size": "2",
+						"short_name": "\u5343\u79cb",
+						"image_url_list": {
+							"expression_1086": "../../12008305/js/petit_cg/expression/1086.js",
+							"hair_10086": "../../12008305/js/petit_cg/hair/10086.js",
+							"costume_1_20086": "../../12008305/js/petit_cg/costume/1/20086.js"
+						},
+						"sub_type_list": {
+							"head": null,
+							"hand": null,
+							"leg": null
+						},
+						"take_sub_type": {
+							"head": 0,
+							"hand": 0,
+							"leg": 0
+						},
+						"petit_csv_info_list": {
+							"costume_1_20086": {
+								"image_path": "http:\/\/sp.pf-img-a.mbga.jp\/12008305\/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fimage_sp%2Fitem%2Fl%2Fpetit_cg%2F20086",
+								"accessory_name": "\u30a8\u30ec\u30ac\u30f3\u30c8\u30ef\u30f3\u30d4\u30fb\u5343\u79cb",
+								"explanation": "\u4e0a\u54c1\u306a\u30c7\u30b6\u30a4\u30f3\u306e\u5343\u79cb\u306e\u79c1\u670d\u3067\u3059\u3002<br>\u8cea\u306e\u9ad8\u3044\u3082\u306e\u3092\u3001\u30b7\u30f3\u30d7\u30eb\u306b\u3002",
+								"type_id": "2"
+							}
+						},
+						"petit_csv_sub_type_info_list": []
+					},
+					"2": {
+						"attribute": "2",
+						"body_type": "1",
+						"breast_size": "2",
+						"short_name": "\u7fe0",
+						"image_url_list": {
+							"expression_1149": "../../12008305/js/petit_cg/expression/1149.js",
+							"hair_13240": "../../12008305/js/petit_cg/hair/13240.js",
+							"costume_1_23240": "../../12008305/js/petit_cg/costume/1/23240.js"
+						},
+						"sub_type_list": {
+							"head": null,
+							"hand": null,
+							"leg": null
+						},
+						"take_sub_type": {
+							"head": 0,
+							"hand": 0,
+							"leg": 0
+						},
+						"petit_csv_info_list": {
+							"costume_1_23240": {
+								"image_path": "http:\/\/sp.pf-img-a.mbga.jp\/12008305\/?guid=ON&amp;url=http%3A%2F%2F125.6.169.35%2Fidolmaster%2Fimage_sp%2Fitem%2Fl%2Fpetit_cg%2F23240",
+								"accessory_name": "\u6b63\u5c04\u5fc5\u4e2d",
+								"explanation": "\u7684\u30e2\u30c1\u30fc\u30d5\u3092\u4f7f\u3063\u305f\u548c\u98a8\u306e\u8863\u88c5\u3067\u3059\u3002<br>\u8aa0\u306e\u5fc3\u3092\u3082\u3063\u3066\u3001\u8cb4\u65b9\u3092\u5c04\u629c\u304d\u307e\u3059\u3002",
+								"type_id": "2"
+							}
+						},
+						"petit_csv_sub_type_info_list": []
+					}
+				}
+			};
+			var default_swf = '../../petit_refresh_room_character_swf';
+			for (var i in refreshRoom.data.idol_avatar) {
+				refreshRoom.data.idol_avatar[i].swf = default_swf;
+			}
+			refreshRoom.detail = [{
+				"id": "1",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "question_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "1",
+				"message": "미도리씨, 일 끝난거야?\n오늘은 음악방송이었던가.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "2",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "어머 치아키씨, 수고하셨습니다.\n그렇습니다, 방금전까지 녹음을...\n치아키씨는 회의였습니까?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "3",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod_smile",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "응, 그런거 같네..\n그거랑 프로듀서에게 볼일이 있어서...\n아아, 맞다!",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "4",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "question_left",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "어머, 무슨 일 있습니까?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "5",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "다음 휴일에 말인데\n다른 예정이 있을려나?",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "6",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아뇨 딱히 없습니다.\n혹시 외출하자고 권유하는겁니까?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "7",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후훗, 맞아.\n프로듀서에게 공연 티켓을\n받았어.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "8",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "trouble",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그런데 정작 본인은 급한 일이\n생긴 모양이야.\n괜찮으면 같이 가는게 어떨까싶어서.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "9",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod_smile",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그러면 같이 가겠습니다♪\n그건 어떤 공연인가요?",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "10",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "확실히, 뮤지컬이었지.\n자세한 내용은 아직 체크해보지 못헀지만.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "11",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "joy",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "좋네요♪ 지금까지 뮤지컬에\n흥미는 있었지만\n실제로 볼 기회가 좀처럼 없어서...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "12",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "어머 그랬었니? 의외네.\n아이돌로써 기술을 쌓는데에도\n좋은 경험이 될거야.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "13",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후훗,치아키씨다운 말이네요.\n언제나 성실한 자세로\n일에 임하시네요.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "14",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그런 말을 들으니 기뻐.\n딱딱하게 생각하는걸지도 모르지만...\n이게 내 성격인걸.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "15",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "deny",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "딱딱하다곤 생각하지 않았어요.\n새로운 것을 배우며 즐긴다...\n치아키씨의 자세는 멋지다 생각해요.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "16",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "거기다 저도 같은 생각인걸요..\n뮤지컬은 즐기는것뿐만 아니라\n일에도 도움이 될거라고...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "17",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "고마워 미도리씨.\n무대에 서는것도, 무대를 보는것도\n다 중요한거네.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "18",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "무대라고하니까 생각이나네요.\n저번에 치아키씨가 출연했던\n연극이... 정말 멋졌어요.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "19",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod_smile",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후훗, 그립네. 환상공연...", 
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "20",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아이돌이라하면 노래하고 춤추는게\n일의 전부라고 생각하고 있었어.\n그래서 그 떄는 고생했었지.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "21",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "노래에 춤, 거기에 연기...\n아이돌은 다재다능 해야한다고\n다시 한번 느꼈어요.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "22",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "아아, 그렇게 생각해보니 역시\n뮤지컬은 좋은 공부가 될 것같아.\n프로듀서에게 감사하자.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "23",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "노래하며 연기하는 연극...\n어려워보이지만 기회가 생긴다면\n도전해보고싶네요.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "24",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "『자, 가자♪\n다 볼 수 없는 여로~♪\n백은의 빛을 들고서~♪』",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "25",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "맞아요! 그런 느낌!\n연극의 연기와는 또 다른 매력이 있는...\n치아키씨, 능숙하시네요♪",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "26",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "joy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후훗, 의외로 할 수 있지 않을까?\n『이 검은~ 평화의 맹새♪\n모두의 미소를, 지키기위해~♪』",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "27",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "『큿, 죽여라! 죽이란 말이다~!\n살아서 창피를 당할 바에야, 차라리!』",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "28",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "shock",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "잠깐, 미도리씨!?\n어째서 갑자기 절박한 씬까지\n넘어가는거야!?",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "29",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "tire",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "앗! 죄송합니다. 무심코...\n그 공연, 치아키씨의 박진감 넘치는 연기가\n인상에 남아서...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "30",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "정말이지...\n모처럼 인상에 남길거라면\n멋진 씬이 좋았을텐데...",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "31",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그래도 그 씬에서는 치아키씨의\n새로운 매력을 발견할 수 있었으니까\n아이돌 역사에 남을 정도로...후훗♪",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "32",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "새로운 매력이라고 하면 미도리씨도\n연극 일을 했었잖아.\n잘 기억하고 있어.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "33",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "미식공연이네요...\n새로운 매력이랄까, 제 삶에도\n영향이 있던 것 같은...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "34",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "joy",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후후, 그만큼 강렬한\n경험이었던거야?\n『오오, 이것이야 말로 미식의 매력~♪』",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "35",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "joy",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "『마음이 뛰어오르는 단맛~♪\n몸이 끓어오르는 매운맛~♪\n누구나 바라는 그것~♪』",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "36",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "happy",
+				"motion2": "happy",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "『미식~ 그것은 음식의 반짝임이여라~♪』",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "37",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "nod",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후후훗...\n뮤지컬에 대한 열정이\n높아져버렸네.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "38",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "분명 본업으로 삼으시는 분들은\n좀 더 매력적으로, 정열적인 연기를\n선보이는 것이겠죠.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "39",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "smile_right",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후훗... 기대해.\n그러면 이 봉투에 티켓이\n들어있으니까 잘 부탁해.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "40",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod_smile",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "네. 감사합니다.\n…어라?... 홍보용 종이가\n 같이 들어있네요.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "41",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "trouble",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "어머, 그랬어?\n미안해, 한 번 보고 싶어.",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "42",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "음, 타이틀은...\n『구르메 어드벤쳐!\n~채소 기사와 과일 공주~』",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "43",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "shock",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "...우,우연이겠지?\n환상공연과 미식공연이\n합쳐진 것 같은...",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "44",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그리고 이 분위기는...\n아동용 뮤지컬일지도\n모르겠네요.",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "45",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod_smile",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그렇다면\n어린 아이도 데려가면\n기뻐할 것 같네요♪",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "46",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "그렇네.\n하지만 티켓은 2장 뿐이니...\n이번엔 두 사람만의 비밀로 할까?",
+				"message_window_type": "",
+				"message_arrow_1": "1",
+				"message_arrow_2": "",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}, {
+				"id": "47",
+				"refresh_room_id": "4",
+				"idol_disp_1": "",
+				"idol_disp_2": "",
+				"idol_disp_3": "",
+				"idol_disp_4": "",
+				"idol_disp_5": "",
+				"motion1": "",
+				"motion2": "nod",
+				"motion3": "",
+				"motion4": "",
+				"motion5": "",
+				"bg_image": "",
+				"message": "후훗, 알겠습니다.\n어른의 비밀, 이네요. 그럼, 이번에는 저희들끼리만...",
+				"message_window_type": "",
+				"message_arrow_1": "",
+				"message_arrow_2": "1",
+				"message_arrow_3": "",
+				"message_arrow_4": "",
+				"message_arrow_5": ""
+			}];
+			petitManager.loaded_action = function() {
+				if (refreshRoom.is_multiply) $('.animation').css({
+					zoom: "50%"
+				});
+				var margin = window.innerHeight - parseInt($('#bg_space > img').css('height'));
+				if (margin > 0) $('#pageContainer').css({
+					"margin-top": margin * 0.5
+				});
+				var $effect_container = $('.effect-container');
+				var $dialogue = $('#dialogue');
+				var dialogue_top = parseInt($dialogue.css('top'));
+				var dialogue_ratio = refreshRoom.dialogue.scaleSizeCheck() / 320;
+				$dialogue.css('top', dialogue_top * dialogue_ratio);
+				if (!$effect_container.hasClass('large-size')) {
+					$dialogue.css('top', dialogue_top * dialogue_ratio);
+					var $animation = $('.animation:not(#dialogue)');
+					var anime_top = parseInt($animation.css('top'));
+					$animation.css('top', anime_top * dialogue_ratio);
+				}
+				$('#jsEyeCatch').hide();
+				refreshRoom.dialogue.startSwf();
+			};
+			petitManager.setWidth(refreshRoom.dialogue.scaleSizeCheck(refreshRoom.is_pc));
+			refreshRoom.bg_list = {
+				"1": "../../12008305/image_sp/ui/refresh_room/bg/bg1.jpg",
+				"": "../../12008305/image_sp/ui/refresh_room/bg/bg.jpg"
+			};
+			var image = new Image;
+			var multiply = refreshRoom.is_pc || window.devicePixelRatio >= 1.5 && !refreshRoom.old_os ? 0.5 : 1;
+			var size = refreshRoom.dialogue.scaleSizeCheck() * multiply;
+			var ratio = size / 320;
+			image.width = size;
+			var effect_container = $('.effect-container');
+			effect_container.css({
+				width: size,
+				height: size,
+				bottom: parseInt(effect_container.css('bottom')) * ratio
+			});
+			image.onload = function() {
+				$('#bg_space').append(image);
+				var height = $(this).css('height');
+				$(this).parent().css('height', height);
+				$(image).css('top', parseInt($(image).css('top')) * ratio);
+				$('#name-plate').css({
+					"-webkit-transform": "scale(" + ratio + ")"
+				})
+				petitManager.setCharacters(refreshRoom.data.idol_avatar);
+				refreshRoom.dialogue.setMotion();
+			}
+			image.src = refreshRoom.bg_list[refreshRoom.detail[0].bg_image];
+			//console.log(refreshRoom);
+		})();
+
+		function playText() {
+			if (window.refreshRoom == void 0) return;
+			refreshRoom.dialogue.comment_deferred.resolve();
+		}
+
+		function motion_callback(index, motion) {
+			var filtered_plate = $('.plate-area[rel=' + index + ']');
+			if (filtered_plate.css('display') == 'none') filtered_plate.show();
+			if (refreshRoom.dialogue.motion_wait) $('#next').trigger('click');
+			refreshRoom.dialogue.motion_wait = false;
+		}
+	</script>
+	<style>
+	</style>
+</body>
+
+</html>
